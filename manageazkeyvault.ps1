@@ -1,8 +1,8 @@
-$RGName = 'RS06UE2DInformationPlatform-RG01'
+$RGName = 'InformationPlatform-RG01'
 $Location = 'East US 2'
 $keyVaultName = 'devhditest'
  
-Import-Csv -Path /home/rajat/sample.csv -delimiter "," | ForEach-Object {
+Import-Csv -Path /home/user/sample.csv -delimiter "," | ForEach-Object {
  
  
 $secret = Get-AzKeyVaultSecret -VaultName $keyVaultName -Name $_.SecretName;
@@ -35,7 +35,7 @@ $secret1 = ConvertTo-SecureString -string $_.secretvalue -asplaintext -force
 }
 }
  
-# Import-Csv -Path /home/rajat/sample1.csv -delimiter "," | ForEach-Object {
+# Import-Csv -Path /home/user/sample1.csv -delimiter "," | ForEach-Object {
 # $key = Get-AzKeyVaultKey -VaultName $keyVaultName
 # if( $key.Name -eq $_.KeyName )
 # {
